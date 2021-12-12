@@ -17,6 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from tours import views as tours_views
 
+handler400 = tours_views.custom_handler400
+handler403 = tours_views.custom_handler403
+handler404 = tours_views.custom_handler404
+handler500 = tours_views.custom_handler500
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', tours_views.main_view),
