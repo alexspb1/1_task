@@ -24,6 +24,7 @@ handler500 = tours_views.custom_handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('', tours_views.TestView.as_view()),
     path('', tours_views.main_view),
     path('departure/<str:departure>', tours_views.departure_view),
     path('tour/<int:id>', tours_views.tour_view),
