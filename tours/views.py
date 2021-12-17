@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseBadRequest, HttpResponseNotFound, HttpResponseForbidden, HttpResponseServerError
+from django.views import View
 
 
 def main_view(request):
@@ -12,6 +13,10 @@ def departure_view(request, departure: str):
 
 def tour_view(request, id: int):
     return render(request, 'tours/tour.html')
+
+# class TestView(View):
+#     def get(self, request, *args, **kwargs):
+#         return render(request, 'test.html', {'name': 'Alex', 'place': 'Lab'})
 
 def custom_handler400(request, exception):
     # Call when SuspiciousOperation raised
