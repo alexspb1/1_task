@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from tours import views as tours_views
 
 handler400 = tours_views.custom_handler400
@@ -24,8 +25,7 @@ handler500 = tours_views.custom_handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', tours_views.TestView.as_view()),
-    path('', tours_views.main_view),
-    path('departure/<str:departure>', tours_views.departure_view),
-    path('tour/<int:id>', tours_views.tour_view),
+    path('', tours_views.main_view, name='main-name'),
+    path('departure/<str:departure>', tours_views.departure_view, name='departure-name'),
+    path('tour/<int:tour_number>', tours_views.tour_view, name='tour_number-name'),
 ]
